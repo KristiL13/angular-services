@@ -6,14 +6,15 @@ import { LoggingService } from '../logging.service'; // telling TS where this se
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService] // Providing the service for Angular.
+  // providers: [LoggingService] // Providing the service for Angular.
 })
 export class NewAccountComponent {
-  constructor(private loggingService: LoggingService,
+  constructor(
+    // private loggingService: LoggingService,
     private accountsService: AccountsService) { } // Dependency injection of the service in Angular.
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
-    this.loggingService.logStatusChange(accountStatus);
+    // this.loggingService.logStatusChange(accountStatus);
   }
 }
