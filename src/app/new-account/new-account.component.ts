@@ -6,7 +6,7 @@ import { LoggingService } from '../logging.service'; // telling TS where this se
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [AccountsService, LoggingService] // Providing the service for Angular.
+  providers: [LoggingService] // Providing the service for Angular.
 })
 export class NewAccountComponent {
   constructor(private loggingService: LoggingService,
