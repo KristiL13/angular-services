@@ -11,7 +11,11 @@ import { LoggingService } from '../logging.service'; // telling TS where this se
 export class NewAccountComponent {
   constructor(
     // private loggingService: LoggingService,
-    private accountsService: AccountsService) { } // Dependency injection of the service in Angular.
+    private accountsService: AccountsService) { // Dependency injection of the service in Angular.
+    this.accountsService.statusUpdated.subscribe(
+      (status: string) => alert('New Status: ' + status)
+    );
+  }
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
